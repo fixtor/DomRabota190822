@@ -9,10 +9,9 @@ int[] CreateRandomArray(int size, int min, int max)
     return array;
 }
 
-
+//Показывает массив
 void ShowArray(int[] array)
 {
-
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
@@ -27,29 +26,12 @@ int evenNumbers(int[] array)
 
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + " ");
-        Console.WriteLine($"array[{i}] = {array[i]} ");
         if (array[i] % 2 == 0)
-        {
             temp++;
-            Console.WriteLine($"temp {temp} i:{i}, array[{i}] = {array[i]}");
-            Console.ReadKey();
-        }
     }
-    Console.WriteLine();
-    // for (int i = 0; i < array.Length; i++)
-    // {
-    //     Console.WriteLine($"array[{i}] = {array[0]}");
-    //     
-
-    // }
-    Console.WriteLine($"arraylenght {array.Length}");
     return temp;
 }
 
-
-
-//Console.Clear();
 Console.WriteLine("Введите количество элементов в массиве");
 int num = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите первое число случайно генерируемого диапазона");
@@ -58,16 +40,7 @@ Console.WriteLine("Введите последнее число случайно
 int max = Convert.ToInt32(Console.ReadLine());
 
 int[] myRandomArray = CreateRandomArray(num, min, max);
+
 ShowArray(myRandomArray);
-//int[] myArray = new int[] CreateRandomArray(num,min,max);
-
-Console.WriteLine($"temp = {evenNumbers(myRandomArray)}");
+Console.WriteLine($"количество чётных чисел в массиве {evenNumbers(myRandomArray)}");
 Console.ReadKey();
-
-// Проверка на отрицательные числа или min больше max
-//if (min < 0 || min > max)
-//    Console.WriteLine($"Вы ввели отрицательное число или число меньше максимального {min}, {max}");
-
-
-
-
