@@ -38,9 +38,12 @@ Console.WriteLine("Введите первое число случайно ге�
 int min = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите последнее число случайно генерируемого диапазона");
 int max = Convert.ToInt32(Console.ReadLine());
-
-int[] myRandomArray = CreateRandomArray(num, min, max);
-
-ShowArray(myRandomArray);
-Console.WriteLine($"количество чётных чисел в массиве {evenNumbers(myRandomArray)}");
-Console.ReadKey();
+if (min > 0 && max > 0)
+{
+    int[] myRandomArray = CreateRandomArray(num, min, max);
+    ShowArray(myRandomArray);
+    Console.WriteLine($"количество чётных чисел в массиве {evenNumbers(myRandomArray)}");
+    Console.ReadKey();
+}
+else
+Console.WriteLine($"Вы ввели отрицательные числа или 0 = {min}, {max}");
