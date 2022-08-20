@@ -34,16 +34,21 @@ int evenNumbers(int[] array)
 
 Console.WriteLine("Введите количество элементов в массиве");
 int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите первое число случайно генерируемого диапазона");
+Console.WriteLine("Введите первое 3-х значное число случайно генерируемого диапазона");
 int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите последнее число случайно генерируемого диапазона");
+Console.WriteLine("Введите последнее 3-х значное число случайно генерируемого диапазона");
 int max = Convert.ToInt32(Console.ReadLine());
 if (min > 0 && max > 0)
 {
-    int[] myRandomArray = CreateRandomArray(num, min, max);
-    ShowArray(myRandomArray);
-    Console.WriteLine($"количество чётных чисел в массиве {evenNumbers(myRandomArray)}");
-    Console.ReadKey();
+    if (min > 99 && max < 1000)
+    {
+        int[] myRandomArray = CreateRandomArray(num, min, max);
+        ShowArray(myRandomArray);
+        Console.WriteLine($"количество чётных чисел в массиве {evenNumbers(myRandomArray)}");
+        Console.ReadKey();
+    }
+    else
+        Console.WriteLine("Введите трехзначные числа");
 }
 else
-Console.WriteLine($"Вы ввели отрицательные числа или 0 = {min}, {max}");
+    Console.WriteLine($"Вы ввели отрицательные числа или 0 = {min}, {max}");
